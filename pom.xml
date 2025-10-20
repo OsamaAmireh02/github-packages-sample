@@ -19,15 +19,14 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Packages</name>
+            <name>GitHub Packages Release</name>
             <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
-            <name>GitHub Packages Snapshots</name>
+            <name>GitHub Packages Snapshot</name>
             <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
         </snapshotRepository>
     </distributionManagement>
-
 
 </project>
