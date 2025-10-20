@@ -7,7 +7,6 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'osama'  # Only run on your main repo
 
     steps:
       # 1️⃣ Checkout the code
