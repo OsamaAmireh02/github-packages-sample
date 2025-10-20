@@ -6,7 +6,7 @@
 
     <groupId>com.osama.sample</groupId>
     <artifactId>github-package-demo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>GitHub Packages Demo</name>
@@ -19,14 +19,27 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Packages</name>
+            <name>GitHub Packages Release</name>
             <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
-            <name>GitHub Packages Snapshots</name>
+            <name>GitHub Packages Snapshot</name>
             <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
         </snapshotRepository>
     </distributionManagement>
 
+    <build>
+        <plugins>
+            <!-- Disable timestamped snapshots -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <uniqueVersion>false</uniqueVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
