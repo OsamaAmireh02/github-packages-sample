@@ -6,7 +6,7 @@
 
     <groupId>com.osama.sample</groupId>
     <artifactId>github-package-demo</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>GitHub Packages Demo</name>
@@ -19,15 +19,9 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
+            <name>GitHub OsamaAmireh02 Maven Packages</name>
+            <url>https://maven.pkg.github.com/OsamaAmireh02/github-packages-sample</url>
         </repository>
-        <snapshotRepository>
-            <id>github</id>
-            <name>GitHub Packages Snapshots</name>
-            <url>https://maven.pkg.github.com/osama/github-packages-sample</url>
-        </snapshotRepository>
     </distributionManagement>
-
 
 </project>
