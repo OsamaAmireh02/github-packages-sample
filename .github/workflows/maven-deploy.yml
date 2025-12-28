@@ -21,9 +21,10 @@ jobs:
       - name: Build JAR
         run: mvn clean package -DskipTests -U
 
-      - name: Deploy to GitHub Packages
-        run: mvn deploy -s .github/settings.xml -DskipTests -U
+      - name: Print env variables
+        run: |
+          echo "GITHUB_ACTOR=$GITHUB_ACTOR"
+          echo "GITHUB_TOKEN=$GITHUB_TOKEN"
         env:
           GITHUB_ACTOR: ${{ secrets.ACTOR }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
