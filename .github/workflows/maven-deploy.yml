@@ -24,7 +24,8 @@ jobs:
       - name: Print env variables
         run: |
           echo "GITHUB_ACTOR=$GITHUB_ACTOR"
-          echo "GITHUB_TOKEN=$GITHUB_TOKEN"
+          echo "GITHUB_TOKEN=$GITHUB_TOKEN  DAH"
         env:
-          GITHUB_ACTOR: ${{ secrets.ACTOR }}
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+
