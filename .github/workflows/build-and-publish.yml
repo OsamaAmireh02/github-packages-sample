@@ -1,38 +1,34 @@
-name: Build and Publish to GitHub Packages
+name: Build and Publish Maven Package
 
 on:
   push:
     branches: [ main ]
+  # Optional: deploy on new version tags
+  # tags:
+  #   - 'v*'
 
 jobs:
-  build-and-publish:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       # 1️⃣ Checkout the code
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup JDK 17
-      - name: Set up JDK 17
+      # 2️⃣ Setup JDK 17 and enable Maven cache
+      - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
 
-      # 3️⃣ Build the JAR
+      # 3️⃣ Build the project JAR
       - name: Build JAR
         run: mvn clean package -DskipTests
 
-      # 4️⃣ Upload the build artifact
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-package-demo
-          path: target/*.jar
-
-      # 5️⃣ Deploy to GitHub Packages
+      # 4️⃣ Deploy to GitHub Packages
       - name: Publish to GitHub Packages
         run: mvn deploy -s .github/settings.xml -DskipTests
         env:
